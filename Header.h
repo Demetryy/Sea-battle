@@ -1,3 +1,4 @@
+п»ї#pragma once
 #pragma once
 #include <iostream>
 using namespace std;
@@ -29,7 +30,7 @@ void CreateMap(char arr[][SIZE])
 	arr[10][0] = '0';
 }
 
-void PrintMap(char arr[][SIZE])  //функция вывода массива на экран
+void PrintMap(char arr[][SIZE])  //ГґГіГ­ГЄГ¶ГЁГї ГўГ»ГўГ®Г¤Г  Г¬Г Г±Г±ГЁГўГ  Г­Г  ГЅГЄГ°Г Г­
 {
 	cout << endl << endl;
 	for (int i = 0; i < SIZE; i++)
@@ -42,7 +43,7 @@ void PrintMap(char arr[][SIZE])  //функция вывода массива на экран
 	}
 }
 
-void SetShip(char arr[][SIZE], int shipLen, int row, int col, char sym) //функция заполнения определенной области символами
+void SetShip(char arr[][SIZE], int shipLen, int row, int col, char sym) //ГґГіГ­ГЄГ¶ГЁГї Г§Г ГЇГ®Г«Г­ГҐГ­ГЁГї Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­Г­Г®Г© Г®ГЎГ«Г Г±ГІГЁ Г±ГЁГ¬ГўГ®Г«Г Г¬ГЁ
 {
 	if (sym == 'V')
 	{
@@ -93,7 +94,7 @@ bool FreeSpaceCheck(char arr[][SIZE], int shipLen, int row, int col, int var)
 	{
 
 
-		if (row + shipLen - 1 > SIZE) {
+		if (row + shipLen - 1 > SIZE || row == 0) {
 			flag = false;
 		}
 
@@ -112,7 +113,7 @@ bool FreeSpaceCheck(char arr[][SIZE], int shipLen, int row, int col, int var)
 	else if (var == 2)
 	{
 
-		if (col + shipLen - 1 > SIZE)
+		if (col + shipLen - 1 > SIZE || col == 0)
 		{
 			flag = false;
 		}
@@ -131,7 +132,7 @@ bool FreeSpaceCheck(char arr[][SIZE], int shipLen, int row, int col, int var)
 		}
 	}
 	else {
-		cout << "\n\nВы неверно выбрали вариант.\n\n";
+		cout << "\n\nГ‚Г» Г­ГҐГўГҐГ°Г­Г® ГўГ»ГЎГ°Г Г«ГЁ ГўГ Г°ГЁГ Г­ГІ.\n\n";
 		flag = false;
 	}
 	return flag;
